@@ -1,23 +1,26 @@
 class Road {
-  constructor(image, y, ctx) {
+  constructor(ctx, canvas) {
     this.x = 0;
-    this.y = y;
+    this.y = 0;
     this.image = new Image();
-    this.image.src = image;
+    this.image.src = "../Images/road.png";
     this.ctx = ctx;
+    this.width = canvas.width;
+    this.height = canvas.height;
   }
 
   draw() {
-    this.ctx.drawImage(this.image, this.x, this.y)
+    this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
+    this.ctx.drawImage(this.image, this.x, this.y - this.height, this.width, this.height)
   }
 
 
-  Update(road) {
+  Update(speed) {
     this.y += speed; //The image shifts down when you refresh
-
-    if (this.y > canvas.height) {
+    if (this.y > this.height) {
       //If the image has gone over the edge of the canvas, change the position
-      this.y = road.y - this.image.height + speed; //The new position is indicated with the second background
+      console.log('If section');
+      this.y = 0; //The new position is indicated with the second background
     }
   }
 }
