@@ -10,7 +10,17 @@ canvas {
 }
 
 .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  position: relative;
+  left: 500px;
+  
+}
+
+.teacher {
+    width: 100px;
+    
+}
+
+.teacher p {
+    font-size: 10px;
+    overflow-wrap: normal;
 }
