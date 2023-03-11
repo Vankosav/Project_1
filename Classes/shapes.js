@@ -5,9 +5,9 @@ class Shapes {
     this.y2 = Math.random() * canvas.height;
     this.y3 = Math.random() * canvas.height;
     this.width = 30;
-    this.height = 40;
+    this.height = 30;
     this.ctx = ctx;
-    this.img1 = new Image();
+    this.img1 = new Image();// try an array
     this.img1.src = "/Images/circle.png";
     this.img2 = new Image();
     this.img2.src = "/Images/square.png";
