@@ -14,6 +14,7 @@ class Shapes {
     this.img3 = new Image ();
     this.img3.src = "/Images/triangle.png"
     }
+    
 
    draw () {
     this.ctx.drawImage(this.img1, this.x, this.y1, this.width, this.height);

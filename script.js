@@ -13,19 +13,21 @@ const ctx = canvas.getContext("2d");
 
 const myStudent = new Flyer (ctx);
 
-const myShapes = [];
-
+const myShapes = ['circle', 'square', 'triangle'];
+//'circle', 'square', 'triangle'
+console.log(myShapes);
 
 let speed = 1;
 let counter = 0; 
 let score = 0; 
 let animationFrame;
-// target
+// let target = myshapesradom;
 
 
 function startGame(){
     animate();
     moveStudent();
+    
     
 }
 
@@ -35,21 +37,30 @@ function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   road.draw();
   road.Update(speed);
-  //requestAnimationFrame(animate);
   myStudent.draw();
   
   if (counter % 50 === 0)  {
-    // change the target shape
     myShapes.push(new Shapes(ctx, canvas));
     console.log('STUDENT: ',myStudent.x, myStudent.y);
     console.log('New Shape:', myShapes[0].y);
   }
   myShapes.forEach((shape) => {
+    if (shape instanceof Shapes) {
     shape.draw();
     shape.move();
+    }
+  
     if (
         // target shape Y
         // if target shape is circle y1 if triangle y2 ....
+        //get random instructions for the game: the teacher will have constant message 
+    //'Find &{random shape} and avoid all other shapes
+    //if (the target shape === circle) {
+        //gameOver with all other shapes
+    // } and else if (the target shape === square) {
+        // gameOver with others 
+        // else if (the target shape === triangle) {
+            //gameOver with others
         shape.x > myStudent.x &&
         shape.x < myStudent.x + myStudent.width &&
         shape.y1 > myStudent.y &&
@@ -82,10 +93,15 @@ function moveStudent () {
       });
       
     }
-}
+
     function gameOver() {
-        cancelAnimationFrame;
+        cancelAnimationFrame(animationFrame);
+       
         ctx.font = "30px Arial";
         ctx.fillText("Game Over", 10, 50);
         
       }
+    } 
+
+    
+        
