@@ -1,8 +1,14 @@
-# Project_1
- I have decided to create an educational game which will be about some basic math concepts- shapes (circle, square, rectangle, triangle). I have two ideas on mind, and I will try with one of them to experiment. The idea is that a student will be on a way to school. The road will be inside the canva. The teacher will be giving instructiuons to the student by having instructions written in a cloud such as: Collect as many squares as you can and avoid all other shapes. the shapes will be falling down the road and the student will be controlled by arrows (keyboard). 
- 
- 
- I tried to find a background (an image for the road and then I got an idea to have an animated road that is going down the y axis. So I have been researching about the ways that will ake that happen. 
- 
- 
- the road is moving but not in a way I want :-). Now I also want to have a GIF of a boy walking up the road so I am finding ways to eliminate the gif backgrounds so I can use it in the game. Maybe I am also complicating it too much. 
+# Basic Shapes Game
+
+This is an educational game that helps children (4+) learning about some basic math shapes (circle, square, triangle). It is known that the kids learn the best while playing and the idea behind this project is that this game would enhance some of their math skills, recognizing shapes. After the shapes are already introduced to children, this game would help them review their knowledge of how does the circle, square and triangle look like. 
+
+I have decided to create this game since my background is in education and I have worked mainly with students with additional needs. I would love to be in the tech-education industry and work on parts of online learning, specificaly on making the learning content accesible to all by intergating assisitive technology inside the learning platforms.  
+
+<img width="731" alt="Screenshot 2023-03-14 at 1 55 17 PM" src="https://user-images.githubusercontent.com/122740912/225007554-c1e10cc4-1ca6-4e00-b5bb-e69b3f98b020.png">
+
+My original idea was to have a child choose a shape that he/she would collect while playing the game and avoid other two. Since this is my frist project, I needed to simplify it a bit. The instructions are given before the game is started. So the only shape that has to be collected is a circle which will, by colliding with the circle, increase a score of the player and the game will be over if the player collides with a square and triangle. 
+
+The player is moved by using the keyboard arrows and it can go left, right, up and down. The shapes are coming from the left toward the player. 
+
+One of the weakness of the game is that some shapes are overlapping which unable the player to collect some circles since they are covered with squares and triangles. 
+
