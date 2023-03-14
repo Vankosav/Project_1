@@ -8,6 +8,8 @@ window.onload = () => {
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+const scoreElement = document.getElementById("score");
+
 const myStudent = new Flyer (ctx);
 const myShapes = ['circle', 'square', 'triangle'];
 
@@ -33,7 +35,7 @@ road.draw();
 road.Update(speed);
 myStudent.draw();
 
-  if (counter % 50 === 0)  {
+  if (counter % 70 === 0)  {
     // change the target shape
     myShapes.push(new Shapes(ctx, canvas));
     console.log('STUDENT: ',myStudent.x, myStudent.y);
@@ -52,6 +54,7 @@ myStudent.draw();
           shape.y1 < myStudent.y + myStudent.height) {
         score++;
         myShapes.splice(index, 1); // remove the collected circle from the shapes array
+        scoreElement.textContent = `Score: ${score}`;
       }
   
       // Check if the student collides with a square or triangle
