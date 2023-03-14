@@ -2,8 +2,8 @@ class Flyer {
     constructor (ctx) {
     this.x = 700;
     this.y = 550;
-    this.width = 120;
-    this.height = 120;
+    this.width = 150;
+    this.height = 150;
     this.img = new Image ();
     this.img.src = "/Images/char.png";
     this.ctx = ctx;

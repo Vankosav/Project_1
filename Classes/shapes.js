@@ -4,8 +4,8 @@ class Shapes {
     this.y1 = Math.random() * canvas.height;
     this.y2 = Math.random() * canvas.height;
     this.y3 = Math.random() * canvas.height;
-    this.width = 30;
-    this.height = 30;
+    this.width = 40;
+    this.height = 40;
     this.ctx = ctx;
     this.img1 = new Image();// try an array
     this.img1.src = "/Images/circle.png";
@@ -17,7 +17,7 @@ class Shapes {
     
 
    draw () {
-    this.ctx.drawImage(this.img1, this.x, this.y1, this.width, this.height);
+    this.ctx.drawImage(this.img1, this.x, this.y1, this.width, this.height); 
     this.ctx.drawImage(this.img2, this.x, this.y2, this.width, this.height);
     this.ctx.drawImage(this.img3, this.x, this.y3, this.width, this.height);  
 }
