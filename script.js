@@ -1,83 +1,98 @@
 import Road from "./Classes/road.js"
 import Flyer from "./Classes/student.js"
-import Shapes from "./Classes/shapes.js";
+import { Circles, Squares, Triangles } from "./Classes/shapes.js";
+
 window.onload = () => {
-    document.querySelector("button").onclick = () => {
+  document.querySelector("button").onclick = () => {
+    if(!gameStart){
       startGame();
-    };
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
+      gameStart = true;
+    }
+  };
 
-const scoreElement = document.getElementById("score");
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
 
-const myStudent = new Flyer (ctx);
-const myShapes = ['circle', 'square', 'triangle'];
+  const scoreElement = document.getElementById("score");
 
-//'circle', 'square', 'triangle'
-console.log(myShapes);
-const road = new Road(ctx, canvas);
+  const myStudent = new Flyer (ctx);
+  const circle = [];
+  const square = [];
+  const triangle = [];
 
-let speed = 1;
-let counter = 0; 
-let score = 0; 
+  const road = new Road(ctx, canvas);
 
-let animationFrame;
+  let speed = 1;
+  let counter = 0; 
+  let gameStart = false;
+  let score = 0; 
+  let animationFrame;
 
-function startGame(){
-  play();
-  moveStudent();
-}
-
-function play() {
-  animationFrame = requestAnimationFrame(play);
-ctx.clearRect(0, 0, canvas.width, canvas.height);
-road.draw();
-road.Update(speed);
-myStudent.draw();
-
-  if (counter % 70 === 0)  {
-    // change the target shape
-    myShapes.push(new Shapes(ctx, canvas));
-    console.log('STUDENT: ',myStudent.x, myStudent.y);
-    console.log('New Shape:', myShapes[0].y);
+  function startGame(){
+    play();
+    moveStudent();
   }
-  myShapes.forEach((shape, index) => {
-    if (shape instanceof Shapes) {
+
+  function play() {
+    animationFrame = requestAnimationFrame(play);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    road.draw();
+    road.Update(speed);
+    myStudent.draw();
+
+    if (counter % 33 === 0)  {
+      circle.push(new Circles(ctx, canvas));
+    }
+    if (counter % 66 === 0)  {
+      square.push(new Squares(ctx, canvas));
+    }
+    if (counter % 100 === 0)  {
+      triangle.push(new Triangles(ctx, canvas));
+    }
+
+    circle.forEach((shape, index) => {
       shape.draw();
       shape.move();
-  
-      // Check if the student collects a circle
-      if (shape.img1.src.includes('circle') &&
+
+      if (shape.type === 'circle' &&
           shape.x > myStudent.x &&
           shape.x < myStudent.x + myStudent.width &&
-          shape.y1 > myStudent.y &&
-          shape.y1 < myStudent.y + myStudent.height) {
+          shape.y > myStudent.y &&
+          shape.y < myStudent.y + myStudent.height) {
         score++;
-        myShapes.splice(index, 1); // remove the collected circle from the shapes array
+        circle.splice(index, 1); // remove the collected circle from the shapes array
         scoreElement.textContent = `Score: ${score}`;
       }
-  
-      // Check if the student collides with a square or triangle
-      if ((shape.img2.src.includes('square') || shape.img3.src.includes('triangle')) &&
-      ((shape.x > myStudent.x &&
-        shape.x < myStudent.x + myStudent.width &&
-        shape.y2 > myStudent.y &&
-        shape.y2 < myStudent.y + myStudent.height) ||
-       (shape.x > myStudent.x &&
-        shape.x < myStudent.x + myStudent.width &&
-        shape.y3 > myStudent.y &&
-        shape.y3 < myStudent.y + myStudent.height)))
-  {
-    gameOver();
-    console.log("collision detected");
+    });
+
+    square.forEach((shape) => {
+      shape.draw();
+      shape.move();
+
+      if (shape.type === 'square' &&
+          shape.x > myStudent.x &&
+          shape.x < myStudent.x + myStudent.width &&
+          shape.y > myStudent.y &&
+          shape.y < myStudent.y + myStudent.height) {
+        gameOver();
+      }
+    });
+
+    triangle.forEach((shape) => {
+      shape.draw();
+      shape.move();
+
+      if (shape.type === 'triangle' &&
+          shape.x > myStudent.x &&
+          shape.x < myStudent.x + myStudent.width &&
+          shape.y > myStudent.y &&
+          shape.y < myStudent.y + myStudent.height) {
+        gameOver();
+      }
+    });
+
+    counter++;
   }
-  
-    }
-  });
-  
-counter++;
-}
-//score-if touch a shape => score++
 function moveStudent () {
   document.addEventListener("keydown", (event) => {
       switch (event.code) {
@@ -96,19 +111,14 @@ function moveStudent () {
       }
     });
 
+  
   }
 
-
   function gameOver() {
-    
       cancelAnimationFrame(animationFrame);
-
       ctx.font = "30px Arial";
       ctx.fillText("Game Over", 10, 50);
-
-    
     }
-  } 
-
-
+  
+  }
 

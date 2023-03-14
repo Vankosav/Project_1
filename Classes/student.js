@@ -3,7 +3,7 @@ class Flyer {
     this.x = 700;
     this.y = 550;
     this.width = 100;
-    this.height = 100;
+    this.height = 120;
     this.img = new Image ();
     this.img.src = "/Images/char.png";
     this.ctx = ctx;

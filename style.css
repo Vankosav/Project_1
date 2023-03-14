@@ -2,16 +2,22 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: rgb(199, 243, 228);
 }
 
 #canvas {
   position: relative;
-  left: 100px;
+  left: -10px;
   top: 30px;
   border: 1px solid black;
   margin: 0px auto;
 }
 
+#score {
+  margin-left: 100px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30px;
+}
 
   
   .text-wrapper {
@@ -31,4 +37,24 @@ button {
   color: #fff;
   padding: 20px 70px;
   border-radius: 10px;
+}
+
+.text-wrapper img {
+  width: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.right-column {
+  margin-left: 20px;
 }
