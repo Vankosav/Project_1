@@ -45,6 +45,7 @@ window.onload = () => {
       window.speechSynthesis.speak(utterance);
     }
   }
+  
 speechButton.addEventListener("click", function() {
   isButtonPressed = true;
   speakInstructions();
@@ -65,13 +66,13 @@ speechButton.addEventListener("click", function() {
     road.Update(speed);
     myStudent.draw();
 
-    if (counter % 40 === 0)  {
+    if (counter % 90 === 0)  {
       circle.push(new Circles(ctx, canvas));
     }
-    if (counter % 45 === 0)  {
+    if (counter % 95 === 0)  {
       square.push(new Squares(ctx, canvas));
     }
-    if (counter % 50 === 0)  {
+    if (counter % 100 === 0)  {
       triangle.push(new Triangles(ctx, canvas));
     }
 
