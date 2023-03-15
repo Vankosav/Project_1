@@ -3,10 +3,12 @@ import Flyer from "./Classes/student.js"
 import { Circles, Squares, Triangles } from "./Classes/shapes.js";
 
 window.onload = () => {
-  document.querySelector("button").onclick = () => {
+  document.getElementById('start').onclick = () => {
+    console.log('start button is clicked');
     if(!gameStart){
       startGame();
       gameStart = true;
+      
     }
   };
 
@@ -14,6 +16,7 @@ window.onload = () => {
   const ctx = canvas.getContext("2d");
 
   const scoreElement = document.getElementById("score");
+  
 
   const myStudent = new Flyer (ctx);
   const circle = [];
@@ -27,6 +30,27 @@ window.onload = () => {
   let gameStart = false;
   let score = 0; 
   let animationFrame;
+  let isButtonPressed = false;
+
+  const speechButton = document.getElementById("speech-button");
+  const textSpeech = document.getElementById("instructions");
+  const textSpeechSay = textSpeech.innerText;
+  const utterance = new SpeechSynthesisUtterance();
+  utterance.text = textSpeechSay;
+  
+  
+  function speakInstructions() {
+    if (isButtonPressed) {
+      const utterance = new SpeechSynthesisUtterance(textSpeechSay);
+      window.speechSynthesis.speak(utterance);
+    }
+  }
+speechButton.addEventListener("click", function() {
+  isButtonPressed = true;
+  speakInstructions();
+});
+
+
 
   function startGame(){
     play();
@@ -34,19 +58,20 @@ window.onload = () => {
   }
 
   function play() {
+    
     animationFrame = requestAnimationFrame(play);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     road.draw();
     road.Update(speed);
     myStudent.draw();
 
-    if (counter % 33 === 0)  {
+    if (counter % 40 === 0)  {
       circle.push(new Circles(ctx, canvas));
     }
-    if (counter % 66 === 0)  {
+    if (counter % 45 === 0)  {
       square.push(new Squares(ctx, canvas));
     }
-    if (counter % 100 === 0)  {
+    if (counter % 50 === 0)  {
       triangle.push(new Triangles(ctx, canvas));
     }
 
@@ -115,10 +140,14 @@ function moveStudent () {
   }
 
   function gameOver() {
-      cancelAnimationFrame(animationFrame);
-      ctx.font = "30px Arial";
-      ctx.fillText("Game Over", 10, 50);
-    }
+    cancelAnimationFrame(animationFrame);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'orange';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'rgb(96, 96, 228)';
+    ctx.font = "80px Arial";
+    ctx.fillText("Game Over", 280, 330);
+  }
   
   }
 

@@ -6,7 +6,7 @@ class Flyer {
     this.height = 120;
     this.img = new Image ();
     this.img.src = "/Images/char.png";
-    this.ctx = ctx;
+    this.ctx = ctx; 
     }
 
     draw() {
