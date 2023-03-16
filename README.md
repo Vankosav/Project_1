@@ -14,3 +14,5 @@ Some ideas for improvement:
 What was described above could be Level 1 of the game. When the player collects 10 circles(donuts), will be moved to Level 2. 
 Level 2- Squares should be collected but more objects that look like circles, squares, triangles will be added. When the player collects 20 squares. will be moved to Level 3.
 Level 3- Triangles are the target. Again, new shapes are added. When the player collects 30 triangles will be the end of the game. 
+
+Also, I should work on responsive web design so the game could be played on different devices. 
