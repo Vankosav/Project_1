@@ -21,8 +21,8 @@
         constructor(ctx, canvas) {
           this.x = 0;
           this.y = Math.random() * canvas.height;
-          this.width = 50;
-          this.height = 50;
+          this.width = 30;
+          this.height = 30;
           this.ctx = ctx;
           this.type = 'circle';
           this.img = new Image();

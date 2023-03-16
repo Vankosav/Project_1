@@ -14,19 +14,19 @@ class Flyer {
     }
 
     moveLeft() {
-    this.x -= 8;
+    this.x -= 10;
     };
 
     moveRight() {
-    this.x += 8;
+    this.x += 10;
     }
 
     moveUp() {
-    this.y -= 8;
+    this.y -= 10;
     }
 
     moveDown() {
-    this.y += 8; 
+    this.y += 10; 
     }
 }
 

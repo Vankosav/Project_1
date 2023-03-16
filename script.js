@@ -31,6 +31,7 @@ window.onload = () => {
   let score = 0; 
   let animationFrame;
   let isButtonPressed = false;
+  
 
   const speechButton = document.getElementById("speech-button");
   const textSpeech = document.getElementById("instructions");
@@ -45,21 +46,23 @@ window.onload = () => {
       window.speechSynthesis.speak(utterance);
     }
   }
-  
+
 speechButton.addEventListener("click", function() {
   isButtonPressed = true;
   speakInstructions();
 });
 
-
+//let myAudio = document.getElementById("audio");
+let myAudio = new Audio ('./Music/backgroundmusic.mp3');
+let sEffect = new Audio ('/Music/soundeffect.wav');
 
   function startGame(){
     play();
     moveStudent();
+    myAudio.play();
   }
 
   function play() {
-    
     animationFrame = requestAnimationFrame(play);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     road.draw();
@@ -86,6 +89,7 @@ speechButton.addEventListener("click", function() {
           shape.y > myStudent.y &&
           shape.y < myStudent.y + myStudent.height) {
         score++;
+        sEffect.play();
         circle.splice(index, 1); // remove the collected circle from the shapes array
         scoreElement.textContent = `Score: ${score}`;
       }
@@ -148,6 +152,7 @@ function moveStudent () {
     ctx.fillStyle = 'rgb(96, 96, 228)';
     ctx.font = "80px Arial";
     ctx.fillText("Game Over", 280, 330);
+    onpause();
   }
   
   }
