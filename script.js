@@ -52,7 +52,6 @@ speechButton.addEventListener("click", function() {
   speakInstructions();
 });
 
-//let myAudio = document.getElementById("audio");
 let myAudio = new Audio ('./Music/backgroundmusic.mp3');
 let sEffect = new Audio ('/Music/soundeffect.wav');
 
