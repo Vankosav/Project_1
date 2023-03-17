@@ -28,7 +28,6 @@ window.onload = () => {
   let score = 0;
   let animationFrame;
   let isButtonPressed = false;
- 
 
   const speechButton = document.getElementById("speech-button");
   const textSpeech = document.getElementById("instructions");
@@ -49,6 +48,7 @@ window.onload = () => {
   });
 
   let myAudio = new Audio("./Music/backgroundmusic.mp3");
+  myAudio.loop = true;
   let sEffect = new Audio("/Music/soundeffect.wav");
 
   function startGame() {
@@ -87,7 +87,7 @@ window.onload = () => {
       ) {
         score++;
         sEffect.play();
-        circle.splice(index, 1); 
+        circle.splice(index, 1);
         scoreElement.textContent = `Score: ${score}`;
       }
     });
@@ -156,6 +156,10 @@ window.onload = () => {
       ctx.font = "80px Arial";
       ctx.fillText("Game Over", 280, 330);
       myAudio.pause();
+      score = 0;
+      scoreElement.textContent = `Score: ${score}`;
+      document.getElementById("start").textContent = "Retry";
+      gameStart = false;
     }, 100);
   }
 };
