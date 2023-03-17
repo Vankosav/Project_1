@@ -146,11 +146,16 @@ window.onload = () => {
   function gameOver() {
     cancelAnimationFrame(animationFrame);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "orange";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "rgb(96, 96, 228)";
-    ctx.font = "80px Arial";
-    ctx.fillText("Game Over", 280, 330);
-    myAudio.pause();
+    setTimeout(() => {
+      circle = [];
+      square = [];
+      triangle = [];
+      ctx.fillStyle = "orange";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgb(96, 96, 228)";
+      ctx.font = "80px Arial";
+      ctx.fillText("Game Over", 280, 330);
+      myAudio.pause();
+    }, 100);
   }
 };

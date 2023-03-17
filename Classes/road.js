@@ -16,11 +16,9 @@ class Road {
 
 
   Update(speed) {
-    this.x += speed; //The image shifts down when you refresh
+    this.x += speed; 
     if (this.x > this.width) {
-      //If the image has gone over the edge of the canvas, change the position
-      
-      this.x = 0; //The new position is indicated with the second background
+      this.x = 0;
     }
   }
 }

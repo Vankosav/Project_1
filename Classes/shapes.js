@@ -1,22 +1,3 @@
-/*class Shapes {
-    constructor (ctx, canvas) {
-    this.x1 = 0; 
-    this.x2 = 0; 
-    this.x3 = 0; 
-    this.y1 = Math.random() * canvas.height;
-    this.y2 = Math.random() * canvas.height;
-    this.y3 = Math.random() * canvas.height;
-    this.width = 60;
-    this.height = 60;
-    this.ctx = ctx;
-    this.img1 = new Image();// try an array
-    this.img1.src = "/Images/circle.png";
-    this.img2 = new Image();
-    this.img2.src = "/Images/square.png";
-    this.img3 = new Image ();
-    this.img3.src = "/Images/triangle.png"
-    }*/
-
 class Circles {
   constructor(ctx, canvas) {
     this.x = 0;
