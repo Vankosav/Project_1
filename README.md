@@ -1,14 +1,22 @@
 # Basic Shapes Game
 
-This is an educational game that helps children (4+) learning about some basic math shapes (circle, square, triangle). It is known that the kids learn the best while playing and the idea behind this project is that this game would enhance some of their math skills, recognizing shapes. After the shapes are already introduced to children, this game would help them review their knowledge of how does the circle, square and triangle look like. 
+This is an educational game that helps children (5+) learn about some basic math shapes (circle, square, triangle). It is known that kids learn the best while playing and the idea behind this project is that this game would enhance some of their math skills, recognizing basic shapes. After the shapes are already introduced to children, this game would help them review their knowledge of what circles, squares, and triangles look like. I used donuts instead of circles, pillows instead of squares and road signs are triangles. In this way, children will be triggered to look for shapes around them that look like the shapes presented in the game.  
 
-I have decided to create this game since my background is in education and I have worked mainly with students with additional needs. I would love to be in the tech-education industry and work on parts of online learning, specificaly on making the learning content accesible to all by intergating assisitive technology inside the learning platforms.  
+I have decided to create this game since my background is in education and I have worked mainly with students with additional needs. I would love to be in the tech-education industry and work on parts of online learning or e-learning, specifically on making the learning content accessible to all by integrating assistive technology inside the learning platforms.  
 
-<img width="731" alt="Screenshot 2023-03-14 at 1 55 17 PM" src="https://user-images.githubusercontent.com/122740912/225007554-c1e10cc4-1ca6-4e00-b5bb-e69b3f98b020.png">
+How to play the game:
 
-My original idea was to have a child choose a shape that he/she would collect while playing the game and avoid other two. Since this is my frist project, I needed to simplify it a bit. The instructions are given before the game is started. So the only shape that has to be collected is a circle which will, by colliding with the circle, increase a score of the player and the game will be over if the player collides with a square and triangle. 
+The instructions are given on the left side of the screen. A player needs to collect circles and if he/she/they collides with circles, it will increase the score by one. The game will be over if the player collides with a square and a triangle.
+The player moves by using the keyboard arrows and it can go left, right, up, and down. The shapes are coming from the left toward the player. 
 
-The player is moved by using the keyboard arrows and it can go left, right, up and down. The shapes are coming from the left toward the player. 
+The orange-blue pattern is a common colorblind-friendly pattern. There is a button, that can be clicked under the instructions, which is actually a text-to-speech feature. This allows children who are still learning how to read or have reading difficulties to be independent while playing the game.  
 
-One of the weakness of the game is that some shapes are overlapping which unable the player to collect some circles since they are covered with squares and triangles. 
+Some ideas for improvement:
 
+What was described above could be Level 1 of the game. When the player collects 10 circles(donuts), will be moved to Level 2. 
+
+Level 2- Squares should be collected but more objects that look like circles, squares, triangles will be added. When the player collects 20 squares. will be moved to Level 3.
+
+Level 3- Triangles are the target. Again, new shapes are added. When the player collects 30 triangles will be the end of the game. 
+
+Also, I should work on responsive web design so the game could be played on different devices. 
