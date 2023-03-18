@@ -11,6 +11,7 @@ The player moves by using the keyboard arrows and it can go left, right, up, and
 
 The orange-blue pattern is a common colorblind-friendly pattern. There is a button, that can be clicked under the instructions, which is actually a text-to-speech feature. This allows children who are still learning how to read or have reading difficulties to be independent while playing the game.  
 
+Simple graphic design -ADHD
 Some ideas for improvement:
 
 What was described above could be Level 1 of the game. When the player collects 10 circles(donuts), will be moved to Level 2. 
