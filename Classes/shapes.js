@@ -13,7 +13,7 @@ class Circles {
     this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   }
   move() {
-    this.x += 3;
+    this.x += 2;
   }
 }
 
@@ -25,7 +25,7 @@ class Squares extends Circles {
     this.img.src = "/Images/square.png";
   }
   move() {
-    this.x += 4;
+    this.x += 3;
   }
 }
 
@@ -37,7 +37,7 @@ class Triangles extends Circles {
     this.img.src = "/Images/triangle.png";
   }
   move() {
-    this.x += 2;
+    this.x += 3;
   }
 }
 
