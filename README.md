@@ -9,7 +9,7 @@ How to play the game:
 The instructions are given on the left side of the screen. A player needs to collect circles and if he/she/they collides with circles, it will increase the score by one. The game will be over if the player collides with a square and a triangle.
 The player moves by using the keyboard arrows and it can go left, right, up, and down. The shapes are coming from the left toward the player. 
 
-The orange-blue pattern is a common colorblind-friendly pattern. There is a button, that can be clicked under the instructions, which is actually a text-to-speech feature. This allows children who are still learning how to read or have reading difficulties to be independent while playing the game.  
+The orange-blue pattern is a common colorblind-friendly pattern. There is a button, that can be clicked under the instructions, which is actually a text-to-speech feature. This allows children who are still learning how to read or have reading difficulties to be independent while playing the game. 
 
 Some ideas for improvement:
 
